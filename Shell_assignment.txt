@@ -1,0 +1,39 @@
+Get-ChildItem showes me the contents of the current working directory. In this case, that was Shell_assignment.txt.
+Get-Alias ls showes me that ls is the alias for Get-Childitem.
+
+The difference in the Get_Help and Get-Help -Detailed is that the detailed version will give you all the parameters, while the normal version does not. 
+
+to filter for a certain extension, one can use Get-ChildItem [[-Filter] <System.String>]
+
+To list the contents of the working directory and filter them for .txt i did the following gci -fi*.txt)
+
+current working directory is the folder UCACCMET2J subfolder 'Powershell'
+
+to move back from this working directory I used sl ..
+to get back to this working directory I used sl Powershell
+
+to set my working directory in shell_magic I used sl shell_magic
+
+if you use ni hello world, powershell doesn't understand the space. So one should use ni hello_world
+
+It did not work because the file hello_world already exists
+
+to rename the bfe file i used PS C:\Users\casta\OneDrive\Documenten\UCACCMET2J\Powershell\shell_magic> rni hello_world.bfe hello_world.txt  
+
+to move the file i used PS C:\Users\casta\OneDrive\Documenten\UCACCMET2J\Powershell\shell_magic> mi hello_world.txt hello_world  
+to move the file back i used PS C:\Users\casta\OneDrive\Documenten\UCACCMET2J\Powershell\shell_magic> mi hello_world.txt shell_magic 
+
+to move the file back and forth i used PS C:\Users\casta\OneDrive\Documenten\UCACCMET2J\Powershell\shell_magic> sl hello_world                             
+PS C:\Users\casta\OneDrive\Documenten\UCACCMET2J\Powershell\shell_magic\hello_world> mi -Path hello_world.txt  -Destination ..      
+
+by copying, a file will stay in the directory it was in aswell as move to the new directory.
+
+to copy the txt file i used PS C:\Users\casta\OneDrive\Documenten\UCACCMET2J\Powershell\shell_magic\hello_world> sl .. 
+PS C:\Users\casta\OneDrive\Documenten\UCACCMET2J\Powershell\shell_magic> copy hello_world.txt -Destination hello_world
+
+for renaming i used PS C:\Users\casta\OneDrive\Documenten\UCACCMET2J\Powershell\shell_magic\hello_world> ren hello_world.txt -NewName world_hello.txt
+
+to remove hello_world.txt from shell_magic PS C:\Users\casta\OneDrive\Documenten\UCACCMET2J\Powershell\shell_magic\hello_world> sl ..
+PS C:\Users\casta\OneDrive\Documenten\UCACCMET2J\Powershell\shell_magic> rm hello_world.txt
+
+if i want to remove the whole folder, it asks me to confirm.
