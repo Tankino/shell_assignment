@@ -37,3 +37,43 @@ to remove hello_world.txt from shell_magic PS C:\Users\casta\OneDrive\Documenten
 PS C:\Users\casta\OneDrive\Documenten\UCACCMET2J\Powershell\shell_magic> rm hello_world.txt
 
 if i want to remove the whole folder, it asks me to confirm.
+
+from PS C:\Users\casta\OneDrive\Documenten\UCACCMET2J\Powershell\shell_magic> gc hello_world.txt I receive no content simply because the file is empty
+#4.2 
+to add text to the txt file: PS C:\Users\casta\OneDrive\Documenten\UCACCMET2J\Powershell\shell_magic> echo 'hello world' > hello_world.txt
+adding more text: PS C:\Users\casta\OneDrive\Documenten\UCACCMET2J\Powershell\shell_magic> echo 'more content'>> hello_world.txt
+#4.3
+The commands I used: PS C:\Users\casta\OneDrive\Documenten\UCACCMET2J\Powershell\shell_magic> ls C:\Users\casta -r > home_contents.list
+you want to use | oh -p if you want a more borad overview of you file
+#5.1
+the measure object command gives how many lines words or characters a file contains.
+
+i can't do that because file.txt does not exist. 
+
+to find out how many characters a file has PS C:\Users\casta\OneDrive\Documenten\UCACCMET2J\Powershell\shell_magic> gc hello_world.txt | measure -Character
+
+under the hood it uses the argument on the left side of the pipe as the first argument in the right side
+
+there are two files in my current wd PS C:\Users\casta\OneDrive\Documenten\UCACCMET2J\Powershell\shell_magic> Get-ChildItem | measure -Property length
+
+#5.2 
+PS C:\Users\casta\OneDrive\Documenten\UCACCMET2J\Powershell\shell_magic> echo hello world world hello > helloworld.txt
+
+to see the pattern world:
+
+
+PS C:\Users\casta\OneDrive\Documenten\UCACCMET2J\Powershell\shell_magic> sls helloworld.txt -Pattern 'World'
+
+it gave me that the word world can be found in the second and third line. 
+
+PS C:\Users\casta\OneDrive\Documenten\UCACCMET2J\Powershell\shell_magic> sls helloworld.txt|sls worldhello.txt -Pattern 'hello'
+
+the word hello was found three times
+
+instead of FullName one could do: Name, Creationtime or LastWritetime (found it on the internet)
+
+#5.3
+
+PS C:\Users\casta\OneDrive\Documenten\UCACCMET2J\Powershell\shell_magic> sls helloworld.txt -Pattern 'hello'
+
+hello occurs in the files twice (in line 1 and 4)
